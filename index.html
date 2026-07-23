@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Summer Fun — Ôn hè lớp 4 lên lớp 5</title>
+<style>
+  :root{
+    --paper:#FFF9F2; --card:#FFFFFF; --ink:#33305B; --ink-soft:#6E6A93; --line:#E7E1F2;
+    --mango:#F0902F; --mango-bg:#FFF1E0;
+    --sky:#3D82D1; --sky-bg:#E8F1FC;
+    --leaf:#2FA45F; --leaf-bg:#E6F6EC;
+    --blossom:#DE4685; --blossom-bg:#FDEAF2;
+    --grape:#7C5FD3; --grape-bg:#F0EBFC;
+    --ok:#12855A; --ok-bg:#E4F6ED; --no:#D2384F; --no-bg:#FDECEE;
+    --r:16px;
+    --font:"SF Pro Rounded",ui-rounded,-apple-system,"Segoe UI Variable Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--font); color:var(--ink); background:var(--paper);
+    font-size:17px; line-height:1.5; -webkit-text-size-adjust:100%;
+    padding:0 0 132px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:14px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    border-radius:22px;padding:22px 18px;text-align:center;color:#fff;
+    background:linear-gradient(120deg,#8FC7F0 0%,#B9A6EE 55%,#F0A6C8 100%);
+    box-shadow:0 8px 22px rgba(124,95,211,.18);
+  }
+  .hero h1{margin:6px 0 4px;font-size:29px;letter-spacing:-.4px;font-weight:800}
+  .hero .sub{display:inline-block;background:rgba(255,255,255,.28);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:600}
+  .hero .clouds{font-size:20px;opacity:.95}
+  .idrow{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .idbox{flex:1 1 150px;background:var(--card);border:2px dashed var(--blossom);border-radius:var(--r);padding:9px 12px}
+  .idbox label{display:block;font-size:12px;font-weight:700;color:var(--blossom);margin-bottom:3px}
+  .idbox input{width:100%;border:0;border-bottom:2px dotted var(--line);background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:3px 0;outline:none}
+  .idbox input:focus{border-bottom-color:var(--grape)}
+  .tip{margin-top:12px;background:#FFF6DC;border-left:5px solid #F2C230;border-radius:10px;padding:10px 13px;font-size:14.5px;color:#6B5714}
+
+  /* ---------- Units ---------- */
+  .unit{margin-top:18px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .unit>h2{margin:0;padding:13px 16px;font-size:18px;color:#fff;font-weight:800;letter-spacing:-.2px}
+  .unit>h2 small{font-weight:600;opacity:.9;font-size:14px}
+  .unit .body{padding:6px 13px 16px;background:var(--tintbg)}
+  .u1{--tint:var(--mango);--tintbg:var(--mango-bg)}
+  .u2{--tint:var(--sky);--tintbg:var(--sky-bg)}
+  .u3{--tint:var(--leaf);--tintbg:var(--leaf-bg)}
+  .u4{--tint:var(--blossom);--tintbg:var(--blossom-bg)}
+  .u5{--tint:var(--grape);--tintbg:var(--grape-bg)}
+  .unit>h2{background:var(--tint)}
+
+  .ex{background:var(--card);border-radius:var(--r);padding:12px 13px;margin-top:12px;border:1px solid var(--line)}
+  .ex h3{margin:0 0 4px;font-size:16.5px;display:flex;gap:8px;align-items:flex-start;font-weight:800}
+  .ex h3 .n{flex:0 0 26px;height:26px;border-radius:50%;background:#FFD65A;color:#5B4200;display:grid;place-items:center;font-size:14px;font-weight:800}
+  .ex h3 .vi{font-weight:600;color:var(--ink-soft);font-size:14px}
+  .reading{background:#fff;border:2px dashed var(--leaf);border-radius:var(--r);padding:12px 14px;margin-top:12px;font-size:16px}
+  .reading b{color:var(--leaf)}
+
+  .q{padding:7px 0;border-top:1px dotted var(--line)}
+  .q:first-of-type{border-top:0}
+  .qline{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .qnum{color:var(--ink-soft);font-size:14px;min-width:18px}
+  .hint{color:var(--ink-soft);font-style:italic;font-size:14.5px}
+
+  input[type=text],textarea,select{
+    font:inherit;font-size:16px;color:var(--ink);background:#FDFCFF;
+    border:2px solid var(--line);border-radius:11px;padding:7px 10px;outline:none;max-width:100%;
+  }
+  input[type=text]:focus,textarea:focus,select:focus{border-color:var(--grape);background:#fff}
+  textarea{width:100%;min-height:52px;resize:vertical}
+  .in-sm{width:120px}
+  .in-md{width:170px}
+  .in-lg{width:100%}
+
+  .pills{display:flex;flex-wrap:wrap;gap:7px}
+  .pill{
+    font:inherit;font-size:15.5px;font-weight:700;color:var(--ink);
+    background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .pill[aria-pressed=true]{background:var(--tint,#7C5FD3);border-color:var(--tint,#7C5FD3);color:#fff}
+  .pill:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #FFC53D;outline-offset:2px}
+  .grouprow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:6px 0;border-top:1px dotted var(--line)}
+  .grouprow:first-child{border-top:0}
+  .word{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:16px;font-weight:700;background:#FFF3D6;border-radius:8px;padding:3px 9px;min-width:86px;text-align:center}
+
+  .fb{margin-top:5px;font-size:14.5px;border-radius:9px;padding:5px 10px;display:none}
+  .q.checked .fb{display:block}
+  .grouprow .fb{flex:1 0 100%;margin-left:0}
+  .q.good .fb{background:var(--ok-bg);color:var(--ok)}
+  .q.bad .fb{background:var(--no-bg);color:var(--no)}
+  .q.bad{background:#FFF7F8;border-radius:10px}
+  .rule{display:none;margin-top:8px;font-size:14px;background:#F4F1FD;border-left:4px solid var(--grape);border-radius:8px;padding:7px 11px;color:#4A4278}
+  .ex.hasbad .rule{display:block}
+
+  /* ---------- Result ---------- */
+  .panel{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px}
+  .panel h2{margin:0 0 8px;font-size:19px}
+  .scorecard{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .sun{
+    flex:0 0 128px;height:128px;border-radius:50%;display:grid;place-items:center;text-align:center;
+    background:radial-gradient(circle at 35% 30%,#FFE79A,#FFC93C);
+    box-shadow:0 0 0 9px #FFF2C9,0 8px 20px rgba(240,180,40,.35);
+  }
+  .sun .big{font-size:42px;font-weight:800;line-height:1;color:#6B4A00}
+  .sun .small{font-size:13px;font-weight:700;color:#8A6410}
+  .verdict{flex:1 1 190px;font-size:16px}
+  .verdict .line{margin:3px 0}
+  .chart{margin-top:14px}
+  .bar{display:flex;align-items:center;gap:9px;margin:9px 0;font-size:14.5px}
+  .bar .nm{flex:0 0 108px;font-weight:700}
+  .bar .track{flex:1;height:16px;background:#F0ECF8;border-radius:999px;overflow:hidden}
+  .bar .fill{height:100%;border-radius:999px;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .bar .val{flex:0 0 66px;text-align:right;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+
+  /* ---------- Cấu hình API (đầu trang) ---------- */
+  .setup{margin-top:14px;border:2px solid var(--grape);border-radius:20px;background:var(--card);padding:14px 14px 16px}
+  .setup h2{margin:0 0 3px;font-size:18px}
+  .setup .lead{font-size:14.5px;color:var(--ink-soft);margin:0}
+  .setup .field label{color:var(--ink)}
+  select{max-width:100%}
+  select.model{width:100%;max-width:430px}
+  .keystate{margin-top:8px;font-size:14px;font-weight:700;color:var(--ok)}
+  .warnbox{margin-top:9px;background:#FFF6DC;border-left:5px solid #F2C230;border-radius:9px;padding:8px 11px;font-size:13.5px;color:#6B5714}
+
+  /* ---------- Biểu đồ radar + phân tích ---------- */
+  .radarwrap{text-align:center;margin-top:6px}
+  .radarwrap svg{width:100%;max-width:330px;height:auto}
+  .analysis{margin-top:14px;background:#FBFAFF;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+  .analysis h3{margin:14px 0 6px;font-size:16.5px}
+  .analysis h3:first-child{margin-top:0}
+  .analysis ul.dots{margin:4px 0 0 19px;padding:0}
+  .analysis ul.dots li{margin:5px 0}
+  .plan{list-style:none;margin:6px 0 0;padding:0}
+  .plan li{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin:7px 0;font-size:15px}
+  .plan .day{flex:0 0 58px;font-weight:800;color:var(--grape);font-size:14px}
+  .tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .tag{font-size:13.5px;font-weight:700;border-radius:999px;padding:4px 11px;background:#F0ECF8;color:#4A4278}
+  .tag.warn{background:var(--no-bg);color:var(--no)}
+  .tag.good{background:var(--ok-bg);color:var(--ok)}
+
+  /* ---------- Buttons ---------- */
+  button{font-family:inherit}
+  .btn{
+    font-size:16.5px;font-weight:800;color:#fff;background:var(--grape);border:0;border-radius:14px;
+    padding:12px 18px;cursor:pointer;box-shadow:0 4px 0 #6247B4;
+  }
+  .btn:active{transform:translateY(2px);box-shadow:0 2px 0 #6247B4}
+  .btn.green{background:var(--leaf);box-shadow:0 4px 0 #227B47}
+  .btn.green:active{box-shadow:0 2px 0 #227B47}
+  .btn.ghost{background:#fff;color:var(--ink);border:2px solid var(--line);box-shadow:none;font-size:15px;padding:10px 14px}
+  .btn[disabled]{opacity:.55;cursor:not-allowed}
+  .dock{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    background:rgba(255,249,242,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;
+  }
+  .dock .mini{font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- AI ---------- */
+  .keyhelp{font-size:14.5px;color:var(--ink-soft)}
+  details{margin-top:8px;background:#F7F4FF;border-radius:12px;padding:9px 12px;border:1px solid var(--line)}
+  summary{cursor:pointer;font-weight:700;font-size:15px}
+  details ol{margin:8px 0 2px 18px;padding:0}
+  details li{margin:4px 0}
+  .field{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .field label{font-size:14px;font-weight:700;flex:0 0 100%}
+  .aiout{margin-top:12px;font-size:16px;line-height:1.6}
+  .aiout h4{margin:14px 0 4px;font-size:16.5px;color:var(--grape)}
+  .aiout ul{margin:4px 0 4px 20px;padding:0}
+  .aiout p{margin:6px 0}
+  .status{margin-top:10px;font-size:14.5px;padding:8px 11px;border-radius:10px;display:none}
+  .status.on{display:block}
+  .status.err{background:var(--no-bg);color:var(--no)}
+  .status.info{background:#EAF1FC;color:#25538C}
+  .status.good{background:var(--ok-bg);color:var(--ok)}
+  .spin{display:inline-block;width:14px;height:14px;border:3px solid #C9D8EE;border-top-color:#25538C;border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px;margin-right:6px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  code{background:#F1EDFB;border-radius:6px;padding:1px 5px;font-size:14px}
+  .foot{text-align:center;color:var(--ink-soft);font-size:13.5px;margin:22px 0 0}
+  pre.test{white-space:pre-wrap;font-size:14px;background:#12132A;color:#C8F5D8;padding:11px;border-radius:12px;overflow:auto}
+
+  @media (max-width:420px){
+    body{font-size:16.5px}
+    .hero h1{font-size:25px}
+    .in-md{width:140px}
+    .sun{flex-basis:104px;height:104px}
+    .sun .big{font-size:34px}
+    .bar .nm{flex-basis:88px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{
+    .dock,.btn,.noprint,details{display:none!important}
+    body{padding-bottom:0;background:#fff}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="clouds">☁️ 🌈 ☁️</div>
+    <h1>🌞 English Summer Fun 🌞</h1>
+    <div class="sub">Ôn hè tiếng Anh · Từ lớp 4 lên lớp 5</div>
+  </header>
+
+  <div class="idrow">
+    <div class="idbox"><label>🧒 Tên em</label><input id="stName" type="text" placeholder="Viết tên em..." autocomplete="off"></div>
+    <div class="idbox"><label>📅 Ngày làm</label><input id="stDate" type="text" placeholder="VD: 23/07" autocomplete="off"></div>
+  </div>
+
+  <p class="tip">💡 <b>Bí kíp:</b> Mỗi ngày làm 1–2 phần thôi, đừng vội nha! Làm xong bấm <b>Chấm điểm</b> ở cuối trang. Cố lên nào! 💪</p>
+
+  <section class="setup" id="setup">
+    <h2>🔑 Kết nối AI <span style="font-weight:600;font-size:14px;color:var(--ink-soft)">— cài 1 lần cho máy này</span></h2>
+    <p class="lead">Chấm điểm, biểu đồ và nhận xét cơ bản luôn chạy được, kể cả không có mạng. Dán API key Gemini nếu muốn có thêm phần AI giải thích từng lỗi.</p>
+
+    <details>
+      <summary>📌 Cách lấy API key Gemini miễn phí (2 phút)</summary>
+      <ol>
+        <li>Mở <b>aistudio.google.com/apikey</b> trên trình duyệt, đăng nhập tài khoản Google.</li>
+        <li>Bấm <b>Create API key</b> (Tạo khóa API) → chọn hoặc tạo một project.</li>
+        <li>Bấm biểu tượng <b>Copy</b> để sao chép chuỗi key (bắt đầu bằng <code>AIza…</code>).</li>
+        <li>Quay lại trang này, dán vào ô <b>API key</b> → bấm <b>💾 Lưu API key</b> → bấm <b>Kiểm tra kết nối</b>.</li>
+      </ol>
+      <p class="keyhelp">Gói miễn phí hiện chỉ áp dụng cho các mô hình <b>Flash</b> và <b>Flash-Lite</b> (các bản Pro đã chuyển sang trả phí từ 01/4/2026), không cần thẻ tín dụng, khoảng 1.500 lượt/ngày — thừa đủ cho một lớp. Nếu báo lỗi 429 nghĩa là gọi quá nhanh, chờ khoảng 1 phút rồi thử lại.</p>
+      <p class="keyhelp">Key là của riêng thầy cô, đừng đưa cho học sinh. Key chỉ nằm trong trình duyệt máy này; nếu là máy dùng chung, bấm <b>Xóa key</b> sau khi dùng.</p>
+    </details>
+
+    <div class="field">
+      <label for="apiKey">API key Gemini</label>
+      <input id="apiKey" type="password" class="in-lg" placeholder="Dán key vào đây (AIza...)" autocomplete="off" spellcheck="false">
+    </div>
+
+    <div class="field">
+      <label for="modelSel">Mô hình Gemini</label>
+      <select id="modelSel" class="model">
+        <option value="gemini-3.5-flash" selected>gemini-3.5-flash — Miễn phí · cân bằng, nên dùng</option>
+        <option value="gemini-3.1-flash-lite">gemini-3.1-flash-lite — Miễn phí · nhanh, hạn mức cao nhất</option>
+        <option value="gemini-3.6-flash">gemini-3.6-flash — Miễn phí · bản mới nhất</option>
+        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite — Miễn phí · nhẹ, tiết kiệm</option>
+        <option value="gemini-2.5-flash">gemini-2.5-flash — Miễn phí · bản cũ, ổn định</option>
+        <option value="custom">Khác… (tự nhập tên mô hình)</option>
+      </select>
+      <input id="modelCustom" type="text" class="in-md" placeholder="vd: gemini-3.1-flash" spellcheck="false" style="display:none">
+    </div>
+
+    <div class="field">
+      <button class="btn" id="btnSaveKey" type="button">💾 Lưu API key</button>
+      <button class="btn ghost" id="btnTestKey" type="button">Kiểm tra kết nối</button>
+      <button class="btn ghost" id="btnClearKey" type="button">Xóa key</button>
+    </div>
+    <div class="keystate" id="keyState"></div>
+    <div class="status" id="aiStatus"></div>
+    <p class="warnbox">Lưu ý riêng tư: ở gói miễn phí, Google có thể dùng nội dung gửi lên để cải thiện sản phẩm. Nên cho học sinh ghi tên gọi thân mật thay vì họ tên đầy đủ.</p>
+  </section>
+
+  <main id="sheet"></main>
+
+  <!-- KẾT QUẢ -->
+  <section class="panel" id="result" style="display:none">
+    <h2>🎯 Kết quả của em</h2>
+    <div class="scorecard">
+      <div class="sun"><div><div class="big" id="scoreBig">0</div><div class="small">/ 100 điểm</div></div></div>
+      <div class="verdict">
+        <div class="line" id="vCount"></div>
+        <div class="line" id="vWord"></div>
+        <div class="line" id="vWeak"></div>
+      </div>
+    </div>
+    <div class="radarwrap" id="radar"></div>
+    <div class="chart" id="chart"></div>
+    <div class="analysis" id="analysis"></div>
+    <p class="keyhelp" style="margin-top:12px">Câu sai đã được đánh dấu 🔴 ngay tại chỗ, kèm đáp án đúng và quy tắc ngắn. Kéo lên xem lại nha.</p>
+  </section>
+
+  <!-- AI -->
+  <section class="panel" id="aiPanel">
+    <h2>🤖 Cô giáo AI giải thích chi tiết</h2>
+    <p class="keyhelp">Phần nhận xét và biểu đồ ở trên đã có sẵn không cần mạng. Nút dưới đây gửi các câu sai cho Gemini để được giải thích kỹ hơn kèm ví dụ — cần mạng và API key đã lưu ở đầu trang.</p>
+    <div class="field" style="margin-top:12px">
+      <button class="btn" id="btnAI" type="button">✨ Xin nhận xét chi tiết từ AI</button>
+    </div>
+    <div class="status" id="aiStatus2"></div>
+    <div class="aiout" id="aiOut"></div>
+  </section>
+
+  <!-- GIÁO VIÊN -->
+  <section class="panel noprint">
+    <h2>🧑‍🏫 Góc giáo viên</h2>
+    <p class="keyhelp">Công cụ kiểm chứng cách chấm. Học sinh không cần dùng phần này.</p>
+    <div class="field">
+      <button class="btn ghost" id="btnFillAll" type="button">Điền toàn bộ đáp án đúng</button>
+      <button class="btn ghost" id="btnSelfTest" type="button">Chạy tự kiểm tra</button>
+      <button class="btn ghost" id="btnPrint" type="button">In / Lưu PDF</button>
+    </div>
+    <pre class="test" id="testOut" style="display:none"></pre>
+    <p class="keyhelp" style="margin-top:10px">Cách tính: <b>63 câu được máy chấm</b>, mỗi câu 1 điểm → điểm = làm tròn(số câu đúng ÷ 63 × 100). Đúng cả 63 câu = <b>100/100</b>. Bài 12 (Viết về em) không tính điểm, chỉ để AI nhận xét.</p>
+  </section>
+
+  <p class="foot">🌈 Chúc em một mùa hè vui và học thật giỏi! 🎉⭐</p>
+</div>
+
+<div class="dock noprint">
+  <button class="btn green" id="btnGrade" type="button">✅ Chấm điểm</button>
+  <button class="btn ghost" id="btnReset" type="button">Làm lại</button>
+  <span class="mini" id="dockInfo">Đã làm 0/63 câu</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* =======================================================================
+   1. DỮ LIỆU BÀI TẬP + ĐÁP ÁN  (chấm hoàn toàn offline)
+   ======================================================================= */
+var MATCH_OPTS = [
+  {v:"a", t:"a. bơi lội"}, {v:"b", t:"b. giáo viên"}, {v:"c", t:"c. con voi"},
+  {v:"d", t:"d. bệnh viện"}, {v:"e", t:"e. bữa sáng"}
+];
+var GROUPS = [{v:"food",t:"🍎 Food"},{v:"animals",t:"🐾 Animals"},{v:"subjects",t:"📚 Subjects"}];
+var GROUP_VI = {food:"🍎 Food",animals:"🐾 Animals",subjects:"📚 Subjects"};
+
+var UNITS = [
+ {cls:"u1", title:"🐣 UNIT 1 — Vocabulary", vi:"Từ vựng", ex:[
+   {no:1, skill:"vocab", type:"match", title:"Match the words with the meanings.", vi:"Nối từ với nghĩa",
+    rule:"Học từ theo cặp Anh–Việt và đọc to 3 lần mỗi ngày thì nhớ lâu hơn.",
+    items:[{q:"1. teacher",ans:"b"},{q:"2. hospital",ans:"d"},{q:"3. swimming",ans:"a"},{q:"4. elephant",ans:"c"},{q:"5. breakfast",ans:"e"}]},
+
+   {no:2, skill:"vocab", type:"group", title:"Put the words in the correct group.", vi:"Xếp từ vào đúng nhóm",
+    rule:"Nhóm từ theo chủ đề (đồ ăn / con vật / môn học) giúp em nhớ nhanh hơn nhớ lẻ từng từ.",
+    items:[{q:"apple",ans:"food"},{q:"dog",ans:"animals"},{q:"math",ans:"subjects"},{q:"rice",ans:"food"},
+           {q:"cat",ans:"animals"},{q:"English",ans:"subjects"},{q:"banana",ans:"food"},{q:"science",ans:"subjects"}]},
+
+   {no:3, skill:"vocab", type:"text", title:"Complete the words.", vi:"Điền chữ còn thiếu — viết cả từ",
+    rule:"Viết cả từ rồi đọc to từng âm: fa-ther, tea-cher. Sai chính tả thường do quên chữ câm hoặc nhầm 'ea'/'ee'.",
+    items:[{q:"1. f _ _ ther",hint:"(bố)",accept:["father"]},
+           {q:"2. t _ _ cher",hint:"(giáo viên)",accept:["teacher"]},
+           {q:"3. r _ b _ ot",hint:"(rô-bốt)",accept:["robot"]},
+           {q:"4. s _ h _ ol",hint:"(trường học)",accept:["school"]},
+           {q:"5. r _ _ ding",hint:"(đọc sách)",accept:["reading"]}]}
+ ]},
+
+ {cls:"u2", title:"✏️ UNIT 2 — Grammar", vi:"Ngữ pháp", ex:[
+   {no:4, skill:"grammar", type:"choice", title:"Circle the correct word.", vi:"Chọn từ đúng",
+    rule:"Chủ ngữ He/She/It + động từ thêm -s (likes) và dùng doesn't. I/You/We/They giữ nguyên (like) và dùng don't. Với 'to be': I → am, He/She/It → is, You/We/They → are.",
+    items:[{before:"1. She",after:"ice cream.",opts:["like","likes"],ans:"likes"},
+           {before:"2. They",after:"my friends.",opts:["is","are"],ans:"are"},
+           {before:"3. I",after:"a student.",opts:["am","is"],ans:"am"},
+           {before:"4. He",after:"play football.",opts:["don't","doesn't"],ans:"doesn't"},
+           {before:"5. We",after:"to school every day.",opts:["go","goes"],ans:"go"}]},
+
+   {no:5, skill:"grammar", type:"text", title:"Present Continuous — write am / is / are + V-ing.", vi:"Hiện tại tiếp diễn",
+    rule:"Công thức: S + am/is/are + V-ing. I am eating · He is running (gấp đôi phụ âm: run → running) · They are playing.",
+    items:[{q:"1. She ____ (read) a book now.",accept:["is reading","she is reading","she's reading"],show:"is reading"},
+           {q:"2. They ____ (play) in the garden.",accept:["are playing","they are playing","they're playing"],show:"are playing"},
+           {q:"3. I ____ (eat) my lunch.",accept:["am eating","i am eating","i'm eating"],show:"am eating"},
+           {q:"4. He ____ (run) fast.",accept:["is running","he is running","he's running"],show:"is running"},
+           {q:"5. We ____ (sing) a song.",accept:["are singing","we are singing","we're singing"],show:"are singing"}]},
+
+   {no:6, skill:"grammar", type:"choice", title:"Write can or can't.", vi:"Điền can hoặc can't",
+    rule:"can = làm được, can't = không làm được. Sau can/can't luôn là động từ nguyên mẫu, không thêm -s: She can swim (không phải cans/swims).",
+    items:[{before:"1. A bird",after:"fly. ✅",opts:["can","can't"],ans:"can"},
+           {before:"2. A fish",after:"walk. ❌",opts:["can","can't"],ans:"can't"},
+           {before:"3. I",after:"swim. ✅",opts:["can","can't"],ans:"can"},
+           {before:"4. A baby",after:"drive a car. ❌",opts:["can","can't"],ans:"can't"},
+           {before:"5. Monkeys",after:"climb trees. ✅",opts:["can","can't"],ans:"can"}]},
+
+   {no:7, skill:"grammar", type:"choice", title:"Write There is or There are.", vi:"Điền There is / There are",
+    rule:"There is + danh từ số ít (a cat, an apple). There are + danh từ số nhiều (three books, many students).",
+    items:[{before:"1.",after:"a cat on the sofa.",opts:["There is","There are"],ans:"There is"},
+           {before:"2.",after:"three books on the desk.",opts:["There is","There are"],ans:"There are"},
+           {before:"3.",after:"an apple in the bag.",opts:["There is","There are"],ans:"There is"},
+           {before:"4.",after:"many students in the class.",opts:["There is","There are"],ans:"There are"},
+           {before:"5.",after:"a park near my house.",opts:["There is","There are"],ans:"There is"}]},
+
+   {no:8, skill:"grammar", type:"select", title:"Question words: What / Where / Who / How many / When.", vi:"Từ để hỏi",
+    rule:"What = cái gì · Where = ở đâu · Who = ai · How many = bao nhiêu (đếm được) · When = khi nào. Nhìn câu trả lời để chọn từ hỏi.",
+    opts:["What","Where","Who","How many","When"],
+    items:[{after:"is your name? — My name is Nam.",ans:"What"},
+           {after:"do you live? — I live in Da Nang.",ans:"Where"},
+           {after:"books do you have? — I have five books.",ans:"How many"},
+           {after:"is your best friend? — My best friend is Lan.",ans:"Who"},
+           {after:"is your birthday? — It's in July.",ans:"When"}]}
+ ]},
+
+ {cls:"u3", title:"📖 UNIT 3 — Reading", vi:"Đọc hiểu", reading:true, ex:[
+   {no:9, skill:"reading", type:"choice", title:"True (T) or False (F)?", vi:"Đúng hay Sai",
+    rule:"Tìm đúng câu trong bài rồi so từng chi tiết. Chú ý bẫy: bài viết 'watermelon' (dưa hấu) chứ không phải 'banana'.",
+    items:[{before:"1. Mai is ten years old.",after:"",opts:["T","F"],ans:"T"},
+           {before:"2. Mai goes to school in summer.",after:"",opts:["T","F"],ans:"F"},
+           {before:"3. Mai gets up at seven o'clock.",after:"",opts:["T","F"],ans:"T"},
+           {before:"4. Mai's favourite fruit is banana.",after:"",opts:["T","F"],ans:"F"},
+           {before:"5. Mai will visit her grandparents.",after:"",opts:["T","F"],ans:"T"}]},
+
+   {no:10, skill:"reading", type:"open", title:"Answer the questions.", vi:"Trả lời câu hỏi — viết cả câu",
+    rule:"Trả lời cả câu và đổi ngôi: câu hỏi hỏi 'Mai' thì trả lời bắt đầu bằng 'She...'.",
+    items:[{q:"1. How old is Mai?", keys:[["ten","10"]], show:"She is ten years old."},
+           {q:"2. What does Mai do in the afternoon?", keys:[["read","play"]], show:"She reads English books and plays with her little brother."},
+           {q:"3. Why does Mai love summer?", keys:[["swim","ice cream"]], show:"Because she can swim and eat ice cream."}]}
+ ]},
+
+ {cls:"u4", title:"✍️ UNIT 4 — Writing", vi:"Viết", ex:[
+   {no:11, skill:"writing", type:"text", title:"Put the words in order.", vi:"Sắp xếp thành câu",
+    rule:"Trật tự cơ bản: Chủ ngữ + động từ + phần còn lại. Câu bắt đầu bằng chữ hoa, kết thúc bằng dấu chấm.",
+    items:[{q:"1. is / My / Nam / name / .",accept:["my name is nam"],show:"My name is Nam."},
+           {q:"2. like / I / ice cream / .",accept:["i like ice cream"],show:"I like ice cream."},
+           {q:"3. cat / a / She / has / .",accept:["she has a cat"],show:"She has a cat."},
+           {q:"4. playing / are / They / football / .",accept:["they are playing football"],show:"They are playing football."}]},
+
+   {no:12, skill:"free", type:"free", title:"Write about YOU!", vi:"Viết về em — phần này AI sẽ nhận xét, không tính điểm",
+    rule:"",
+    items:[{before:"1. My name is"},{before:"2. I am ... years old →"},{before:"3. I like"},{before:"4. In summer, I can"}]}
+ ]},
+
+ {cls:"u5", title:"🎲 FUN CORNER", vi:"Góc vui học", ex:[
+   {no:13, skill:"fun", type:"text", title:"Unscramble the words.", vi:"Sắp xếp chữ cái thành từ",
+    rule:"Đọc gợi ý tiếng Việt trước, đoán từ, rồi kiểm tra xem có dùng đủ các chữ cái không.",
+    items:[{q:"1. O O K B →",hint:"(một thứ để đọc)",accept:["book"]},
+           {q:"2. P L E A P →",hint:"(một loại trái cây)",accept:["apple"]},
+           {q:"3. C H O O S L →",hint:"(nơi em đi học)",accept:["school"]},
+           {q:"4. R E T A W →",hint:"(thứ em uống hằng ngày)",accept:["water"]}]},
+
+   {no:14, skill:"fun", type:"odd", title:"Odd one out — circle it!", vi:"Tìm từ khác loại",
+    rule:"Hỏi: ba từ kia cùng nhóm gì? (con vật / màu sắc / môn học / hành động) — từ còn lại là đáp án.",
+    items:[{words:["dog","cat","apple","bird"],ans:"apple"},
+           {words:["red","blue","green","table"],ans:"table"},
+           {words:["math","science","banana","English"],ans:"banana"},
+           {words:["run","jump","swim","book"],ans:"book"}]}
+ ]}
+];
+
+var SKILLS = [
+  {k:"vocab",  name:"Từ vựng",  color:"#F0902F"},
+  {k:"grammar",name:"Ngữ pháp", color:"#3D82D1"},
+  {k:"reading",name:"Đọc hiểu", color:"#2FA45F"},
+  {k:"writing",name:"Viết câu",  color:"#DE4685"},
+  {k:"fun",    name:"Vui học",   color:"#7C5FD3"}
+];
+
+/* Việc cần luyện ứng với từng bài — dùng để dựng kế hoạch tuần tới (chạy offline) */
+var TODOS = {
+  1:"Học lại 5 từ bài 1 (teacher, hospital, swimming, elephant, breakfast): viết mỗi từ 3 lần và đọc to.",
+  2:"Kẻ 3 cột Food / Animals / School subjects, tự điền thêm 3 từ mới cho mỗi cột.",
+  3:"Chép lại 5 từ bài 3 và khoanh chữ hay quên: fa-ther, tea-cher, s-ch-ool, rea-ding.",
+  4:"Ôn quy tắc He/She/It + động từ thêm -s. Viết 5 câu về người thân: My sister likes…",
+  5:"Ôn công thức am/is/are + V-ing. Viết 5 câu tả việc mọi người đang làm ở nhà.",
+  6:"Viết 5 câu với can và 5 câu với can't về em và các con vật.",
+  7:"Viết 5 câu There is / There are tả đồ vật trong phòng em (nhớ: is + số ít, are + số nhiều).",
+  8:"Học 5 từ hỏi What / Where / Who / How many / When, đặt 1 câu hỏi cho mỗi từ.",
+  9:"Đọc lại bài My Summer Holiday, gạch chân câu chứa đáp án cho từng ý Đúng/Sai.",
+  10:"Đọc lại bài và trả lời 3 câu hỏi bằng câu đầy đủ, bắt đầu bằng She… hoặc Because…",
+  11:"Sắp xếp lại 4 câu bài 11, rồi viết thêm 3 câu về gia đình theo thứ tự: Ai + làm gì + cái gì.",
+  13:"Chơi trò đảo chữ: tự đảo 5 từ đã học rồi đố bạn hoặc đố ba mẹ giải.",
+  14:"Với mỗi nhóm 4 từ, nói to xem 3 từ kia cùng nhóm gì (con vật / màu sắc / môn học / hành động) rồi mới chọn."
+};
+/* Việc ôn duy trì khi không còn lỗi để chữa */
+var KEEPUP = [
+  "Đọc to bài My Summer Holiday 2 lần, rồi kể lại bằng 3 câu tiếng Anh của em.",
+  "Học 5 từ mới em thích, vẽ hình minh họa cho mỗi từ.",
+  "Viết 5 câu về mùa hè của em, có dùng I can… và There is/There are…",
+  "Làm lại cả phiếu này và tự chấm, mục tiêu giữ vững 100/100.",
+  "Kể cho ba mẹ nghe bằng tiếng Anh: tên, tuổi, món em thích, việc em làm mùa hè."
+];
+
+var READING_TEXT = "Hi! My name is Mai. I am ten years old. It is summer now, so I don't go to school. Every morning, I get up at seven o'clock. I have breakfast with my family. In the afternoon, I read English books and play with my little brother. I love summer because I can swim and eat ice cream. My favourite fruit is watermelon. Next week, I will visit my grandparents in the countryside. I am very happy!";
+
+/* =======================================================================
+   2. TIỆN ÍCH
+   ======================================================================= */
+function el(tag,cls,txt){var e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e;}
+function $(id){return document.getElementById(id);}
+function norm(s){
+  return String(s==null?"":s).toLowerCase()
+    .replace(/[\u2018\u2019\u02BC]/g,"'")
+    .replace(/[.,!?;:"]/g," ")
+    .replace(/\s+/g," ").trim();
+}
+var store = {
+  get:function(k){ try{ return window.localStorage.getItem(k); }catch(e){ return null; } },
+  set:function(k,v){ try{ window.localStorage.setItem(k,v); }catch(e){} },
+  del:function(k){ try{ window.localStorage.removeItem(k); }catch(e){} }
+};
+
+/* ITEMS: danh sách phẳng tất cả câu, mỗi câu có get()/set()/clear() */
+var ITEMS = [];
+
+/* =======================================================================
+   3. DỰNG GIAO DIỆN
+   ======================================================================= */
+function makePills(opts, item, showText){
+  var box = el("div","pills");
+  opts.forEach(function(o){
+    var v = showText ? o : o;
+    var b = el("button","pill", v);
+    b.type="button"; b.setAttribute("aria-pressed","false"); b.dataset.val=v;
+    b.addEventListener("click",function(){
+      var pressed = b.getAttribute("aria-pressed")==="true";
+      Array.prototype.forEach.call(box.children,function(c){c.setAttribute("aria-pressed","false");});
+      b.setAttribute("aria-pressed", pressed ? "false" : "true");
+      onChange();
+    });
+    box.appendChild(b);
+  });
+  item.get=function(){ var s=box.querySelector('[aria-pressed="true"]'); return s?s.dataset.val:""; };
+  item.set=function(v){
+    Array.prototype.forEach.call(box.children,function(c){
+      c.setAttribute("aria-pressed", c.dataset.val===v ? "true":"false");
+    });
+  };
+  item.clear=function(){ item.set("\u0000"); };
+  return box;
+}
+
+function build(){
+  var sheet=$("sheet");
+  UNITS.forEach(function(u){
+    var sec=el("section","unit "+u.cls);
+    var h=el("h2"); h.appendChild(document.createTextNode(u.title+" "));
+    var sm=el("small",null,"("+u.vi+")"); h.appendChild(sm); sec.appendChild(h);
+    var body=el("div","body");
+
+    if(u.reading){
+      var rd=el("div","reading");
+      var rt=el("p"); rt.style.margin="0 0 6px";
+      var b=el("b",null,"🏖 My Summer Holiday"); rt.appendChild(b); rd.appendChild(rt);
+      rd.appendChild(el("div",null,READING_TEXT));
+      body.appendChild(rd);
+    }
+
+    u.ex.forEach(function(ex){
+      var box=el("div","ex"); box.dataset.ex=ex.no;
+      var h3=el("h3");
+      h3.appendChild(el("span","n",String(ex.no)));
+      var t=el("span"); t.appendChild(document.createTextNode(ex.title+" "));
+      t.appendChild(el("span","vi","("+ex.vi+")"));
+      h3.appendChild(t); box.appendChild(h3);
+
+      if(ex.type==="group"){
+        var legend=el("p","hint","Chạm để chọn nhóm cho mỗi từ.");
+        legend.style.margin="2px 0 6px"; box.appendChild(legend);
+      }
+
+      ex.items.forEach(function(it,i){
+        it.ex=ex; it.idx=i; it.key="q"+ex.no+"_"+i;
+        var q=el("div","q"); it.node=q;
+        var line=el("div","qline");
+
+        if(ex.type==="match"){
+          line.appendChild(el("span",null,it.q));
+          var sel=el("select");
+          sel.appendChild(new Option("— chọn —",""));
+          MATCH_OPTS.forEach(function(o){ sel.appendChild(new Option(o.t,o.v)); });
+          sel.addEventListener("change",onChange);
+          line.appendChild(sel);
+          it.get=function(){return sel.value;};
+          it.set=function(v){sel.value=v;};
+          it.clear=function(){sel.value="";};
+          it.answerText=function(){ var f=MATCH_OPTS.filter(function(o){return o.v===it.ans;})[0]; return f?f.t:it.ans; };
+          it.check=function(v){ return v===it.ans; };
+          it.label=it.q;
+        }
+        else if(ex.type==="group"){
+          q.className="q grouprow";
+          line.className="qline"; line.style.flex="1";
+          var w=el("span","word",it.q);
+          q.appendChild(w);
+          line.appendChild(makePills(GROUPS.map(function(g){return g.t;}), it, true));
+          it.check=function(v){ return v===GROUP_VI[it.ans]; };
+          it.answerText=function(){ return GROUP_VI[it.ans]; };
+          it.label=it.q;
+        }
+        else if(ex.type==="text"){
+          line.appendChild(el("span",null,it.q));
+          var inp=el("input"); inp.type="text";
+          inp.className = (ex.no===11) ? "in-lg" : "in-md";
+          inp.autocomplete="off"; inp.spellcheck=false;
+          inp.addEventListener("input",onChange);
+          line.appendChild(inp);
+          if(it.hint) line.appendChild(el("span","hint",it.hint));
+          it.get=function(){return inp.value;};
+          it.set=function(v){inp.value=v;};
+          it.clear=function(){inp.value="";};
+          it.check=function(v){ var n=norm(v); return it.accept.indexOf(n)>=0; };
+          it.answerText=function(){ return it.show || it.accept[0]; };
+          it.label=it.q;
+        }
+        else if(ex.type==="choice"){
+          if(it.before) line.appendChild(el("span",null,it.before));
+          line.appendChild(makePills(it.opts,it,true));
+          if(it.after) line.appendChild(el("span",null,it.after));
+          it.check=function(v){ return norm(v)===norm(it.ans); };
+          it.answerText=function(){ return it.ans; };
+          it.label=(it.before||"")+" ___ "+(it.after||"");
+        }
+        else if(ex.type==="select"){
+          line.appendChild(el("span","qnum",(i+1)+"."));
+          var s2=el("select");
+          s2.appendChild(new Option("— chọn —",""));
+          ex.opts.forEach(function(o){ s2.appendChild(new Option(o,o)); });
+          s2.addEventListener("change",onChange);
+          line.appendChild(s2);
+          line.appendChild(el("span",null,it.after));
+          it.get=function(){return s2.value;};
+          it.set=function(v){s2.value=v;};
+          it.clear=function(){s2.value="";};
+          it.check=function(v){ return v===it.ans; };
+          it.answerText=function(){ return it.ans; };
+          it.label="___ "+it.after;
+        }
+        else if(ex.type==="open"){
+          line.style.display="block";
+          line.appendChild(el("div",null,it.q));
+          var ta=el("textarea"); ta.rows=2; ta.placeholder="Viết câu trả lời...";
+          ta.addEventListener("input",onChange);
+          line.appendChild(ta);
+          it.get=function(){return ta.value;};
+          it.set=function(v){ta.value=v;};
+          it.clear=function(){ta.value="";};
+          it.check=function(v){
+            var n=norm(v);
+            if(!n) return false;
+            return it.keys.every(function(group){
+              return group.some(function(k){ return n.indexOf(norm(k))>=0; });
+            });
+          };
+          it.answerText=function(){ return it.show; };
+          it.label=it.q;
+        }
+        else if(ex.type==="odd"){
+          line.appendChild(el("span","qnum",(i+1)+"."));
+          line.appendChild(makePills(it.words,it,true));
+          it.check=function(v){ return v===it.ans; };
+          it.answerText=function(){ return it.ans; };
+          it.label=it.words.join(" · ");
+        }
+        else if(ex.type==="free"){
+          line.style.display="block";
+          line.appendChild(el("div",null,it.before));
+          var fi=el("input"); fi.type="text"; fi.className="in-lg"; fi.autocomplete="off";
+          fi.addEventListener("input",onChange);
+          line.appendChild(fi);
+          it.get=function(){return fi.value;};
+          it.set=function(v){fi.value=v;};
+          it.clear=function(){fi.value="";};
+          it.scored=false;
+          it.label=it.before;
+        }
+
+        q.appendChild(line);
+        var fb=el("div","fb"); it.fb=fb; q.appendChild(fb);
+        box.appendChild(q);
+        if(it.scored!==false) ITEMS.push(it);
+        else FREE_ITEMS.push(it);
+      });
+
+      if(ex.rule){
+        var r=el("div","rule"); r.innerHTML="";
+        r.appendChild(document.createTextNode("📘 Quy tắc: "+ex.rule));
+        box.appendChild(r);
+      }
+      body.appendChild(box);
+    });
+    sec.appendChild(body);
+    sheet.appendChild(sec);
+  });
+}
+var FREE_ITEMS=[];
+
+/* =======================================================================
+   4. CHẤM ĐIỂM (offline)
+   ======================================================================= */
+var TOTAL=0;
+var LAST=null;
+function grade(silent){
+  var bySkill={}, correct=0, blanks=0;
+  SKILLS.forEach(function(s){ bySkill[s.k]={ok:0,n:0}; });
+
+  var wrongByEx={};
+  ITEMS.forEach(function(it){
+    var val=it.get();
+    var ok=it.check(val);
+    if(ok) correct++;
+    if(!norm(val)) blanks++;
+    bySkill[it.ex.skill].n++;
+    if(ok) bySkill[it.ex.skill].ok++;
+
+    it.lastValue=val; it.lastOk=ok;
+    it.node.classList.remove("good","bad");
+    it.node.classList.add("checked", ok?"good":"bad");
+    it.fb.textContent = ok ? "✅ Đúng rồi!" : ("❌ Đáp án đúng: " + it.answerText());
+    if(!ok) wrongByEx[it.ex.no]=(wrongByEx[it.ex.no]||0)+1;
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll(".ex"),function(b){
+    b.classList.toggle("hasbad", !!wrongByEx[b.dataset.ex]);
+  });
+
+  var score=Math.round(correct/TOTAL*100);
+  var res={score:score, correct:correct, total:TOTAL, bySkill:bySkill, wrongByEx:wrongByEx, blanks:blanks};
+  LAST=res;
+  if(!silent) showResult(res);
+  save();
+  return res;
+}
+
+/* Tên bài để nhắc "xem lại bài nào" */
+function exTitle(no){
+  var found=null;
+  UNITS.forEach(function(u){ u.ex.forEach(function(e){ if(e.no===+no) found=e; }); });
+  return found ? ("Bài "+no+" — "+found.title) : ("Bài "+no);
+}
+
+/* Biểu đồ radar 5 kỹ năng (SVG vẽ tay, không cần thư viện) */
+function radarSVG(bySkill){
+  var cx=150, cy=126, R=84, n=SKILLS.length, i;
+  function pt(idx,r){
+    var a=(-90 + idx*(360/n))*Math.PI/180;
+    return [cx+Math.cos(a)*r, cy+Math.sin(a)*r];
+  }
+  function poly(r){
+    var p=[]; for(var j=0;j<n;j++){ var q=pt(j,r); p.push(q[0].toFixed(1)+","+q[1].toFixed(1)); }
+    return p.join(" ");
+  }
+  var s='<svg viewBox="0 0 300 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ radar 5 nhóm kỹ năng">';
+  [0.25,0.5,0.75,1].forEach(function(f){
+    s+='<polygon points="'+poly(R*f)+'" fill="'+(f===1?"#FCFBFF":"none")+'" stroke="#E7E1F2" stroke-width="1"/>';
+  });
+  for(i=0;i<n;i++){
+    var q=pt(i,R);
+    s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+q[0].toFixed(1)+'" y2="'+q[1].toFixed(1)+'" stroke="#DCD5EC" stroke-width="1"/>';
+  }
+  var dp=[], dots="";
+  SKILLS.forEach(function(sk,idx){
+    var b=bySkill[sk.k], f=b.n? b.ok/b.n : 0, q=pt(idx,R*f);
+    dp.push(q[0].toFixed(1)+","+q[1].toFixed(1));
+    dots+='<circle cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="4.5" fill="'+sk.color+'"/>';
+  });
+  s+='<polygon points="'+dp.join(" ")+'" fill="rgba(124,95,211,.22)" stroke="#7C5FD3" stroke-width="2.5" stroke-linejoin="round"/>'+dots;
+  SKILLS.forEach(function(sk,idx){
+    var q=pt(idx,R+20), b=bySkill[sk.k], pct=b.n?Math.round(b.ok/b.n*100):0;
+    s+='<text x="'+q[0].toFixed(1)+'" y="'+q[1].toFixed(1)+'" text-anchor="middle" font-size="12.5" font-weight="700" fill="#33305B">'+sk.name+
+       '<tspan x="'+q[0].toFixed(1)+'" dy="14" font-size="11.5" font-weight="700" fill="'+sk.color+'">'+pct+'%</tspan></text>';
+  });
+  return s+'</svg>';
+}
+
+/* Kế hoạch 5 ngày, ưu tiên bài sai nhiều nhất */
+function buildPlan(res){
+  var order=Object.keys(res.wrongByEx).map(Number).sort(function(a,b){
+    return (res.wrongByEx[b]-res.wrongByEx[a]) || (a-b);
+  });
+  var tasks=[], k=0;
+  order.forEach(function(no){ if(TODOS[no] && tasks.length<5) tasks.push({no:no,t:TODOS[no]}); });
+  while(tasks.length<5){ tasks.push({no:0,t:KEEPUP[k % KEEPUP.length]}); k++; }
+  return tasks;
+}
+
+/* Nhận xét kết quả + hướng học tiếp theo (chạy offline) */
+function analysisHTML(res){
+  var pct=function(k){ var b=res.bySkill[k]; return b.n? Math.round(b.ok/b.n*100):0; };
+  var strong=SKILLS.filter(function(s){return pct(s.k)>=80;});
+  var weak=SKILLS.filter(function(s){return pct(s.k)<80;});
+  var h="";
+
+  h+="<h3>📝 Nhận xét kết quả</h3><ul class='dots'>";
+  h+="<li>Em đúng <b>"+res.correct+"/"+res.total+"</b> câu, được <b>"+res.score+"/100</b> điểm.</li>";
+  if(strong.length){
+    h+="<li>Làm tốt nhất ở: <b>"+strong.map(function(s){return s.name+" ("+pct(s.k)+"%)";}).join(", ")+"</b>.</li>";
+  }
+  if(weak.length){
+    h+="<li>Còn yếu ở: <b>"+weak.map(function(s){return s.name+" ("+pct(s.k)+"%)";}).join(", ")+"</b> — đây là phần cần luyện trước.</li>";
+  } else {
+    h+="<li>Cả 5 nhóm kỹ năng đều từ 80% trở lên. Rất đều tay! 👏</li>";
+  }
+  if(res.blanks>0){
+    h+="<li>Em bỏ trống <b>"+res.blanks+"</b> câu. Lần sau cứ đoán một đáp án, đoán đúng vẫn được điểm.</li>";
+  }
+  h+="</ul>";
+
+  h+="<div class='tagrow'>";
+  SKILLS.forEach(function(s){
+    var p=pct(s.k);
+    h+="<span class='tag "+(p>=80?"good":"warn")+"'>"+s.name+" "+res.bySkill[s.k].ok+"/"+res.bySkill[s.k].n+"</span>";
+  });
+  h+="</div>";
+
+  var exList=Object.keys(res.wrongByEx).map(Number).sort(function(a,b){return a-b;});
+  h+="<h3>🔍 Cần xem lại</h3>";
+  if(exList.length){
+    h+="<ul class='dots'>";
+    exList.forEach(function(no){
+      h+="<li>"+exTitle(no)+" — sai <b>"+res.wrongByEx[no]+"</b> câu.</li>";
+    });
+    h+="</ul>";
+  } else {
+    h+="<ul class='dots'><li>Không có bài nào sai. Em đã nắm chắc toàn bộ phiếu này. 🎉</li></ul>";
+  }
+
+  h+="<h3>🧭 Hướng học tuần tới</h3>";
+  h+="<p class='keyhelp' style='margin:0'>Mỗi ngày 10–15 phút, làm theo thứ tự này:</p><ol class='plan'>";
+  buildPlan(res).forEach(function(t,i){
+    h+="<li><span class='day'>Ngày "+(i+1)+"</span><span>"+t.t+"</span></li>";
+  });
+  h+="</ol>";
+  return h;
+}
+
+function showResult(res){
+  $("result").style.display="block";
+  $("scoreBig").textContent=res.score;
+  $("vCount").textContent="Đúng "+res.correct+" / "+res.total+" câu được chấm.";
+  var word = res.score>=90?"🏆 Xuất sắc! Em giỏi lắm!" :
+             res.score>=75?"🌟 Tốt lắm! Sắp hoàn hảo rồi." :
+             res.score>=50?"💪 Khá rồi, luyện thêm chút nữa nha." :
+                           "🌱 Đừng lo, làm lại phần sai là tiến bộ ngay!";
+  $("vWord").textContent=word;
+
+  var weak=SKILLS.map(function(s){
+    var b=res.bySkill[s.k]; return {name:s.name, p: b.n? b.ok/b.n : 1};
+  }).filter(function(x){return x.p<0.8;}).map(function(x){return x.name;});
+  $("vWeak").textContent = weak.length ? ("Cần luyện thêm: "+weak.join(", ")+".") : "Cả 5 kỹ năng đều vững. 👏";
+
+  $("radar").innerHTML = radarSVG(res.bySkill);
+
+  var c=$("chart"); c.innerHTML="";
+  var head=el("div"); head.style.fontWeight="700"; head.style.margin="4px 0 2px";
+  head.textContent="Số câu đúng theo nhóm kỹ năng"; c.appendChild(head);
+  SKILLS.forEach(function(s){
+    var b=res.bySkill[s.k]; var pct=b.n? Math.round(b.ok/b.n*100):0;
+    var row=el("div","bar");
+    row.appendChild(el("span","nm",s.name));
+    var tr=el("span","track"); var fl=el("span","fill");
+    fl.style.background=s.color; fl.style.width="0%"; tr.appendChild(fl);
+    row.appendChild(tr);
+    row.appendChild(el("span","val",b.ok+"/"+b.n+" · "+pct+"%"));
+    c.appendChild(row);
+    setTimeout(function(){ fl.style.width=pct+"%"; },40);
+  });
+
+  $("analysis").innerHTML = analysisHTML(res);
+  $("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function countDone(){
+  var d=0; ITEMS.forEach(function(it){ if(norm(it.get())) d++; });
+  return d;
+}
+function onChange(){
+  $("dockInfo").textContent="Đã làm "+countDone()+"/"+TOTAL+" câu";
+  save();
+}
+
+/* Lưu tạm bài làm (nếu trình duyệt cho phép) */
+function save(){
+  try{
+    var o={name:$("stName").value,date:$("stDate").value,a:{}};
+    ITEMS.concat(FREE_ITEMS).forEach(function(it){ o.a[it.key]=it.get(); });
+    store.set("esf_work", JSON.stringify(o));
+  }catch(e){}
+}
+function restore(){
+  var raw=store.get("esf_work"); if(!raw) return;
+  try{
+    var o=JSON.parse(raw);
+    $("stName").value=o.name||""; $("stDate").value=o.date||"";
+    ITEMS.concat(FREE_ITEMS).forEach(function(it){ if(o.a && o.a[it.key]!=null) it.set(o.a[it.key]); });
+  }catch(e){}
+}
+
+function clearAll(){
+  ITEMS.concat(FREE_ITEMS).forEach(function(it){
+    it.clear();
+    if(it.node){ it.node.classList.remove("checked","good","bad"); it.fb.textContent=""; }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".ex"),function(b){ b.classList.remove("hasbad"); });
+  $("result").style.display="none";
+  $("aiOut").innerHTML="";
+  onChange();
+}
+
+/* Điền đáp án đúng (dùng để kiểm chứng) */
+function fillCorrect(){
+  ITEMS.forEach(function(it){
+    var t=it.ex.type;
+    if(t==="match") it.set(it.ans);
+    else if(t==="group") it.set(GROUP_VI[it.ans]);
+    else if(t==="text") it.set(it.show || it.accept[0]);
+    else if(t==="choice") it.set(it.ans);
+    else if(t==="select") it.set(it.ans);
+    else if(t==="open") it.set(it.show);
+    else if(t==="odd") it.set(it.ans);
+  });
+  FREE_ITEMS.forEach(function(it,i){
+    it.set(["Nam","10","English and football","swim every day"][i]||"...");
+  });
+  onChange();
+}
+/* Điền đáp án sai (dùng để kiểm chứng) */
+function fillWrong(){
+  ITEMS.forEach(function(it){
+    var t=it.ex.type;
+    if(t==="match"){ var o=MATCH_OPTS.filter(function(x){return x.v!==it.ans;})[0]; it.set(o.v); }
+    else if(t==="group"){ var g=GROUPS.filter(function(x){return x.t!==GROUP_VI[it.ans];})[0]; it.set(g.t); }
+    else if(t==="text"||t==="open") it.set("zzz");
+    else if(t==="choice"){ it.set(it.opts.filter(function(x){return x!==it.ans;})[0]); }
+    else if(t==="select"){ it.set(it.ex.opts.filter(function(x){return x!==it.ans;})[0]); }
+    else if(t==="odd"){ it.set(it.words.filter(function(x){return x!==it.ans;})[0]); }
+  });
+  onChange();
+}
+
+/* =======================================================================
+   5. TỰ KIỂM TRA CÁCH CHẤM
+   ======================================================================= */
+function selfTest(){
+  var out=[], pass=true;
+  function chk(name,cond,detail){ out.push((cond?"PASS  ":"FAIL  ")+name+(detail?"  → "+detail:"")); if(!cond)pass=false; }
+
+  var backup={}; ITEMS.concat(FREE_ITEMS).forEach(function(it){ backup[it.key]=it.get(); });
+
+  chk("Tổng số câu được chấm = 63", TOTAL===63, "hiện tại "+TOTAL);
+
+  clearAll(); var r0=grade(true);
+  chk("Bỏ trống toàn bộ → 0 điểm", r0.score===0 && r0.correct===0, r0.correct+"/"+r0.total+" = "+r0.score);
+
+  clearAll(); fillCorrect(); var r1=grade(true);
+  chk("Điền đúng hết → 100 điểm", r1.score===100 && r1.correct===TOTAL, r1.correct+"/"+r1.total+" = "+r1.score);
+
+  var perSkill=SKILLS.every(function(s){ return r1.bySkill[s.k].ok===r1.bySkill[s.k].n; });
+  chk("Điền đúng hết → mọi kỹ năng đạt 100%", perSkill);
+
+  clearAll(); fillWrong(); var r2=grade(true);
+  chk("Điền sai hết → 0 điểm", r2.score===0 && r2.correct===0, r2.correct+"/"+r2.total+" = "+r2.score);
+
+  clearAll(); fillCorrect();
+  var one=ITEMS[0]; one.set(one.ex.type==="match" ? "c" : "zzz");
+  var r3=grade(true);
+  chk("Sai đúng 1 câu → 62/63 (98 điểm)", r3.correct===TOTAL-1 && r3.score===98, r3.correct+"/"+r3.total+" = "+r3.score);
+
+  var sum=SKILLS.reduce(function(a,s){return a+r3.bySkill[s.k].n;},0);
+  chk("Tổng số câu của 5 nhóm kỹ năng = tổng số câu chấm", sum===TOTAL, sum+" vs "+TOTAL);
+
+  clearAll();
+  ITEMS.concat(FREE_ITEMS).forEach(function(it){ if(backup[it.key]) it.set(backup[it.key]); });
+  onChange();
+
+  out.push("");
+  out.push(pass ? "KẾT LUẬN: ĐẠT — cách chấm chạy đúng, điền đúng hết ra 100/100."
+                : "KẾT LUẬN: CÓ LỖI — xem dòng FAIL ở trên.");
+  var box=$("testOut"); box.style.display="block"; box.textContent=out.join("\n");
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+/* =======================================================================
+   6. NHẬN XÉT AI (Gemini) — key do người dùng nhập
+   ======================================================================= */
+function statusIn(id,msg,kind,spin){
+  var s=$(id); s.className="status on "+(kind||"info");
+  s.innerHTML="";
+  if(spin){ s.appendChild(el("span","spin")); }
+  s.appendChild(document.createTextNode(msg));
+}
+var ACTIVE_STATUS="aiStatus";
+function status(msg,kind,spin){ statusIn(ACTIVE_STATUS,msg,kind,spin); }
+function hideStatus(){ $("aiStatus").className="status"; $("aiStatus2").className="status"; }
+
+function getKey(){ return $("apiKey").value.trim(); }
+function getModel(){
+  var v=$("modelSel").value;
+  if(v==="custom"){ return ($("modelCustom").value||"").trim() || "gemini-3.5-flash"; }
+  return v;
+}
+function setModel(m){
+  var sel=$("modelSel"), found=false, opts=sel.options||[];
+  Array.prototype.forEach.call(opts,function(o){ if(o.value===m) found=true; });
+  if(found){ sel.value=m; $("modelCustom").style.display="none"; }
+  else { sel.value="custom"; $("modelCustom").style.display=""; $("modelCustom").value=m; }
+}
+function showKeyState(){
+  var k=getKey();
+  $("keyState").textContent = k ? ("🔐 Đã có key ("+k.slice(0,6)+"…"+k.slice(-4)+") · mô hình: "+getModel()) : "";
+}
+
+function callGemini(prompt, cb){
+  var key=getKey();
+  if(!key){ status("Chưa có API key. Cuộn lên đầu trang, mục 🔑 Kết nối AI, mở phần hướng dẫn để lấy key.","err"); return; }
+  var url="https://generativelanguage.googleapis.com/v1beta/models/"+encodeURIComponent(getModel())+":generateContent";
+  fetch(url,{
+    method:"POST",
+    headers:{"Content-Type":"application/json","x-goog-api-key":key},
+    body:JSON.stringify({contents:[{role:"user",parts:[{text:prompt}]}]})
+  }).then(function(res){
+    return res.json().then(function(data){ return {ok:res.ok,status:res.status,data:data}; });
+  }).then(function(r){
+    if(!r.ok){
+      var m=(r.data && r.data.error && r.data.error.message) ? r.data.error.message : "Lỗi "+r.status;
+      var friendly = r.status===400 ? "Key sai định dạng hoặc yêu cầu không hợp lệ. Kiểm tra lại key." :
+                     r.status===403 ? "Key không có quyền gọi Gemini API. Tạo key mới trong Google AI Studio." :
+                     r.status===404 ? "Không tìm thấy mô hình '"+getModel()+"'. Chọn mô hình khác trong danh sách ở đầu trang." :
+                     r.status===429 ? "Vượt hạn mức miễn phí. Chờ khoảng 1 phút rồi thử lại." :
+                     "Máy chủ Gemini báo lỗi.";
+      status(friendly+" ("+m+")","err");
+      return;
+    }
+    var parts=(((r.data.candidates||[])[0]||{}).content||{}).parts||[];
+    var text=parts.map(function(p){return p.text||"";}).join("\n").trim();
+    if(!text){ status("Gemini không trả về nội dung. Thử lại lần nữa nhé.","err"); return; }
+    cb(text);
+  }).catch(function(){
+    status("Không gọi được Gemini. Kiểm tra kết nối mạng (phần chấm điểm vẫn chạy bình thường khi offline).","err");
+  });
+}
+
+function buildPrompt(res){
+  var wrong=ITEMS.filter(function(it){ return it.lastOk===false; }).map(function(it){
+    return "- Bài "+it.ex.no+" ("+it.ex.title+") | Câu: "+it.label+
+           " | Em viết: \""+(it.lastValue||"(bỏ trống)")+"\" | Đáp án đúng: \""+it.answerText()+"\"";
+  });
+  var free=FREE_ITEMS.map(function(it){ return it.label+" "+(it.get()||"(chưa viết)"); }).join(" | ");
+  var per=SKILLS.map(function(s){
+    var b=res.bySkill[s.k]; return s.name+": "+b.ok+"/"+b.n;
+  }).join(" · ");
+
+  return [
+"Bạn là giáo viên tiếng Anh tiểu học ở Việt Nam, đang nhận xét bài ôn hè của học sinh lớp 4 lên lớp 5 (9-10 tuổi).",
+"Viết HOÀN TOÀN bằng tiếng Việt, giọng ấm áp, khích lệ, câu ngắn, dễ hiểu với trẻ con và phụ huynh.",
+"",
+"Tên học sinh: "+($("stName").value||"(chưa ghi tên)"),
+"Điểm: "+res.score+"/100 (đúng "+res.correct+"/"+res.total+" câu).",
+"Kết quả theo kỹ năng: "+per,
+"",
+"Các câu làm sai:",
+(wrong.length? wrong.join("\n") : "(Không sai câu nào)"),
+"",
+"Phần Viết về em (không chấm điểm, hãy sửa lỗi ngữ pháp/chính tả nếu có): "+free,
+"",
+"Hãy trả lời đúng cấu trúc sau, dùng markdown:",
+"## Em làm tốt chỗ nào",
+"2-3 gạch đầu dòng khen cụ thể dựa trên kết quả thật.",
+"## Vì sao sai và sửa thế nào",
+"Với mỗi lỗi (gộp các lỗi cùng loại lại thành một mục, tối đa 5 mục): nêu tên lỗi, giải thích nguyên nhân bằng tiếng Việt,",
+"nêu QUY TẮC ngắn gọn dễ nhớ, rồi cho 1 ví dụ SAI và 1 ví dụ ĐÚNG bằng tiếng Anh có dịch nghĩa tiếng Việt.",
+"## Nhận xét phần Viết về em",
+"Sửa lại câu của em cho đúng và khen một ý.",
+"## Tuần tới luyện gì",
+"Lịch 5 ngày, mỗi ngày 10-15 phút, mỗi ngày một việc thật cụ thể (làm lại bài số mấy, học mấy từ nào, viết mấy câu gì).",
+"",
+"Không dùng bảng. Không quá 450 từ."
+  ].join("\n");
+}
+
+/* markdown tối giản → HTML an toàn */
+function mdToHtml(md){
+  var lines=md.split(/\r?\n/), html="", inList=false;
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function inline(s){
+    return esc(s).replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/\*([^*]+)\*/g,"<i>$1</i>")
+                 .replace(/`([^`]+)`/g,"<code>$1</code>");
+  }
+  lines.forEach(function(raw){
+    var l=raw.trim();
+    if(/^#{1,6}\s/.test(l)){
+      if(inList){html+="</ul>";inList=false;}
+      html+="<h4>"+inline(l.replace(/^#{1,6}\s*/,""))+"</h4>";
+    } else if(/^([-*•]|\d+\.)\s+/.test(l)){
+      if(!inList){html+="<ul>";inList=true;}
+      html+="<li>"+inline(l.replace(/^([-*•]|\d+\.)\s+/,""))+"</li>";
+    } else if(!l){
+      if(inList){html+="</ul>";inList=false;}
+    } else {
+      if(inList){html+="</ul>";inList=false;}
+      html+="<p>"+inline(l)+"</p>";
+    }
+  });
+  if(inList) html+="</ul>";
+  return html;
+}
+
+/* =======================================================================
+   7. GẮN SỰ KIỆN
+   ======================================================================= */
+function init(){
+  build();
+  TOTAL=ITEMS.length;
+  restore();
+  onChange();
+
+  var k=store.get("esf_key"); if(k) $("apiKey").value=k;
+  var m=store.get("esf_model"); setModel(m || "gemini-3.5-flash");
+  showKeyState();
+
+  $("modelSel").addEventListener("change",function(){
+    $("modelCustom").style.display = ($("modelSel").value==="custom") ? "" : "none";
+    showKeyState();
+  });
+  $("modelCustom").addEventListener("input",showKeyState);
+
+  $("btnGrade").addEventListener("click",function(){ grade(false); });
+  $("btnReset").addEventListener("click",function(){
+    if(confirm("Xóa hết bài làm và làm lại từ đầu?")) clearAll();
+  });
+  $("btnFillAll").addEventListener("click",function(){ fillCorrect(); grade(false); });
+  $("btnSelfTest").addEventListener("click",selfTest);
+  $("btnPrint").addEventListener("click",function(){ window.print(); });
+
+  $("btnSaveKey").addEventListener("click",function(){
+    ACTIVE_STATUS="aiStatus";
+    if(!getKey()){ status("Ô API key đang trống. Dán key rồi bấm lưu lại.","err"); return; }
+    store.set("esf_key",getKey()); store.set("esf_model",getModel());
+    showKeyState();
+    status("Đã lưu key và mô hình "+getModel()+" cho máy này.","good");
+  });
+  $("btnClearKey").addEventListener("click",function(){
+    ACTIVE_STATUS="aiStatus";
+    $("apiKey").value=""; store.del("esf_key");
+    showKeyState();
+    status("Đã xóa key khỏi trình duyệt.","good");
+  });
+  $("btnTestKey").addEventListener("click",function(){
+    ACTIVE_STATUS="aiStatus";
+    status("Đang kiểm tra kết nối...","info",true);
+    callGemini("Trả lời đúng hai chữ: OK.",function(){
+      status("Kết nối tốt. Mô hình "+getModel()+" dùng được.","good");
+    });
+  });
+
+  $("btnAI").addEventListener("click",function(){
+    ACTIVE_STATUS="aiStatus2";
+    var res=grade(false);
+    if(!getKey()){
+      status("Chưa có API key. Cuộn lên đầu trang, mục 🔑 Kết nối AI, để dán key. Phần nhận xét và biểu đồ ở trên vẫn dùng được bình thường.","err");
+      return;
+    }
+    status("Đang gửi bài cho cô giáo AI...","info",true);
+    $("aiOut").innerHTML="";
+    callGemini(buildPrompt(res),function(text){
+      hideStatus();
+      $("aiOut").innerHTML=mdToHtml(text);
+      $("aiOut").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+
+  ["stName","stDate"].forEach(function(id){ $(id).addEventListener("input",save); });
+}
+document.addEventListener("DOMContentLoaded",init);
+})();
+</script>
+</body>
+</html>
